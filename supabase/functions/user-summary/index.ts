@@ -5,7 +5,7 @@
  */
 import { createUserClient, getUserId } from '../_shared/supabase-client.ts';
 import { handleCors, jsonResponse, errorResponse } from '../_shared/cors.ts';
-import { generateChat } from '../_shared/gemini.ts';
+import { generateChat } from '../_shared/llm.ts';
 
 Deno.serve(async (req: Request) => {
   const corsResp = handleCors(req);
@@ -57,9 +57,9 @@ PROFILE:
 - Supplements: ${supplements.map((s: Record<string, unknown>) => s.name).join(', ') || 'none'}
 
 LAST 7 DAYS:
-${dailyLogs.map((d: Record<string, unknown>) => 
-  `${d.log_date}: ${d.total_calories} kcal, ${d.total_protein_g}g protein, ${d.meals_count} meals`
-).join('\n')}
+${dailyLogs.map((d: Record<string, unknown>) =>
+      `${d.log_date}: ${d.total_calories} kcal, ${d.total_protein_g}g protein, ${d.meals_count} meals`
+    ).join('\n')}
 
 RECENT MEALS (last 30):
 ${meals.map((m: Record<string, unknown>) => `${m.meal_type}: "${m.raw_input}" (${m.total_calories} kcal)`).join('\n')}

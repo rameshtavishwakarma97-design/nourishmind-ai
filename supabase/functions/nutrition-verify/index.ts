@@ -8,7 +8,7 @@
  */
 import { handleCors, jsonResponse, errorResponse } from '../_shared/cors.ts';
 import { getUserId } from '../_shared/supabase-client.ts';
-import { generateJSON } from '../_shared/gemini.ts';
+import { generateJSON } from '../_shared/llm.ts';
 import { verificationPassPrompts } from '../_shared/prompts/verificationPass.ts';
 
 interface VerifyRequest {

@@ -12,7 +12,7 @@
  */
 import { createUserClient, getUserId } from '../_shared/supabase-client.ts';
 import { handleCors, jsonResponse, errorResponse } from '../_shared/cors.ts';
-import { generateJSON } from '../_shared/gemini.ts';
+import { generateJSON } from '../_shared/llm.ts';
 import { lookupIfct } from '../_shared/nutrition/ifctLookup.ts';
 import { lookupUsda } from '../_shared/nutrition/usdaLookup.ts';
 import { lookupBrand } from '../_shared/nutrition/brandLookup.ts';

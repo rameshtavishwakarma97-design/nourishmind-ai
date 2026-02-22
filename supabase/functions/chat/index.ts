@@ -18,7 +18,7 @@
  */
 import { createUserClient, createAdminClient, getUserId } from '../_shared/supabase-client.ts';
 import { handleCors, jsonResponse, errorResponse } from '../_shared/cors.ts';
-import { generateJSON, generateChat } from '../_shared/gemini.ts';
+import { generateJSON, generateChat } from '../_shared/llm.ts';
 import { buildMealParserPrompt } from '../_shared/prompts/mealParser.ts';
 import { buildUserContext, buildChatSystemPrompt } from '../_shared/prompts/contextBuilder.ts';
 import { buildWhatIfQuery, whatIfPlannerPrompt } from '../_shared/prompts/whatIfPlanner.ts';
