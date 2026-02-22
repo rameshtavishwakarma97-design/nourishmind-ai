@@ -356,15 +356,10 @@ const Dashboard = () => {
                 <Tooltip />
                 <Area type="monotone" dataKey="level" stroke="hsl(147, 35%, 49%)" fill="url(#bsGrad)" strokeWidth={2} />
                 {/* Peak labels */}
-                <ReferenceDot x="9AM" y={72} r={0}>
-                  <label value="Breakfast 9:15AM" position="top" fontSize={8} fill="hsl(var(--muted-foreground))" />
-                </ReferenceDot>
-                <ReferenceDot x="2PM" y={80} r={0}>
-                  <label value="Lunch 2:00PM" position="top" fontSize={8} fill="hsl(var(--muted-foreground))" />
-                </ReferenceDot>
-                <ReferenceDot x="5PM" y={70} r={0}>
-                  <label value="Snack 5:15PM" position="top" fontSize={8} fill="hsl(var(--muted-foreground))" />
-                </ReferenceDot>
+                {/* @ts-ignore recharts label typing */}
+                <ReferenceDot x="9AM" y={72} r={0} label={{ value: "Breakfast 9:15AM", position: "top", fontSize: 8, fill: "hsl(var(--muted-foreground))" } as any} />
+                <ReferenceDot x="2PM" y={80} r={0} label={{ value: "Lunch 2:00PM", position: "top", fontSize: 8, fill: "hsl(var(--muted-foreground))" } as any} />
+                <ReferenceDot x="5PM" y={70} r={0} label={{ value: "Snack 5:15PM", position: "top", fontSize: 8, fill: "hsl(var(--muted-foreground))" } as any} />
               </AreaChart>
             </ResponsiveContainer>
           </div>
