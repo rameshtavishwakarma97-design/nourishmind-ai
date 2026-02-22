@@ -1,0 +1,49 @@
+[api]
+enabled = true
+port = 54321
+schemas = ["public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+site_url = "http://localhost:8080"
+additional_redirect_urls = ["http://localhost:8080"]
+
+[auth.email]
+enable_signup = true
+enable_confirmations = false
+
+# Gateway JWT verification disabled — ES256 tokens from Supabase Auth are
+# validated inside each function via getUserId() / auth.getUser() instead.
+[functions.chat]
+verify_jwt = false
+
+[functions.nutrition-analyze]
+verify_jwt = false
+
+[functions.nutrition-search]
+verify_jwt = false
+
+[functions.nutrition-verify]
+verify_jwt = false
+
+[functions.dashboard-wellness]
+verify_jwt = false
+
+[functions.user-summary]
+verify_jwt = false
+
+[functions.meals-log]
+verify_jwt = false
+
+[functions.conditions-fodmap]
+verify_jwt = false

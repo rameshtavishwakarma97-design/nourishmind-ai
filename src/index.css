@@ -112,3 +112,40 @@
     font-family: 'JetBrains Mono', monospace;
   }
 }
+
+/* ===== Mobile-first responsive utilities ===== */
+
+/* Safe area support */
+@supports (padding: env(safe-area-inset-top)) {
+  .safe-top { padding-top: env(safe-area-inset-top); }
+  .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+}
+
+/* Smooth touch scrolling for all scrollable containers */
+.overflow-x-auto,
+.overflow-y-auto,
+.overflow-auto {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent iOS zoom on input focus */
+@media screen and (max-width: 768px) {
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}
+
+/* Bottom nav spacer — applied to page content on mobile */
+@media screen and (max-width: 767px) {
+  .mobile-bottom-pad {
+    padding-bottom: 80px;
+  }
+}
+
+/* Hide scrollbar for horizontal chip rows */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Page fade transition */
+.page-fade-enter { opacity: 0; }
+.page-fade-enter-active { opacity: 1; transition: opacity 150ms ease-out; }

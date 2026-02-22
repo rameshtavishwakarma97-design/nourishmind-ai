@@ -28,7 +28,7 @@ const LandingPage = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <Button
-                onClick={() => navigate("/onboarding")}
+                onClick={() => navigate("/signup")}
                 className="bg-white text-primary hover:bg-white/90 rounded-pill px-8 h-12 text-base font-semibold"
               >
                 Get Started Free
