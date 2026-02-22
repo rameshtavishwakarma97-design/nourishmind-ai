@@ -45,7 +45,7 @@ const Profile = () => {
 
   // Supplement add form
   const [showAddSupp, setShowAddSupp] = useState(false);
-  const [newSupp, setNewSupp] = useState({ name: "", type: "supplement" as const, dose_amount: "", dose_unit: "mg", frequency: "Daily", time_of_day: "morning" as const, with_food: true });
+  const [newSupp, setNewSupp] = useState<{ name: string; type: string; dose_amount: string; dose_unit: string; frequency: string; time_of_day: string; with_food: boolean }>({ name: "", type: "supplement", dose_amount: "", dose_unit: "mg", frequency: "Daily", time_of_day: "morning", with_food: true });
 
   // Exception add form
   const [showAddException, setShowAddException] = useState(false);
@@ -372,7 +372,7 @@ const Profile = () => {
                     onClick={async () => {
                       await addSupplement({
                         name: newSupp.name.trim(),
-                        type: newSupp.type,
+                        type: newSupp.type as "supplement" | "medication" | "ayurvedic",
                         dose_amount: newSupp.dose_amount ? parseFloat(newSupp.dose_amount) : null,
                         dose_unit: newSupp.dose_unit,
                         frequency: newSupp.frequency,

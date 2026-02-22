@@ -140,9 +140,7 @@ const Insights = () => {
                     <XAxis dataKey="day" tick={{ fontSize: 11 }} stroke="hsl(var(--muted-foreground))" />
                     <YAxis tick={{ fontSize: 10 }} stroke="hsl(var(--muted-foreground))" domain={[0, 2200]} width={35} />
                     <Tooltip content={<CustomBarTooltip />} />
-                    <ReferenceLine y={1800} stroke="#1A3C2E" strokeDasharray="6 4" strokeWidth={1.5}>
-                      <label value="Daily Goal" position="insideTopRight" fontSize={10} fill="#1A3C2E" />
-                    </ReferenceLine>
+                    <ReferenceLine y={1800} stroke="#1A3C2E" strokeDasharray="6 4" strokeWidth={1.5} label={{ value: "Daily Goal", position: "insideTopRight", fontSize: 10, fill: "#1A3C2E" } as any} />
                     <Bar dataKey="fat" stackId="a" fill="hsl(214, 56%, 57%)" name="Fat" radius={[0,0,0,0]} />
                     <Bar dataKey="carbs" stackId="a" fill="hsl(36, 78%, 56%)" name="Carbs" radius={[0,0,0,0]} />
                     <Bar dataKey="protein" stackId="a" fill="hsl(147, 35%, 49%)" name="Protein" radius={[4,4,0,0]} />
@@ -260,9 +258,7 @@ const Insights = () => {
                   <XAxis dataKey="day" tick={{ fontSize: 11 }} stroke="hsl(var(--muted-foreground))" />
                   <YAxis tick={{ fontSize: 11 }} stroke="hsl(var(--muted-foreground))" domain={[0, Math.max(proteinGoal + 10, ...proteinTrendData.map(d => d.protein) )]} />
                   <Tooltip />
-                  <ReferenceLine y={proteinGoal} stroke="#1A3C2E" strokeDasharray="6 4" strokeWidth={1}>
-                    <label value="Goal" position="insideTopRight" fontSize={9} fill="#1A3C2E" />
-                  </ReferenceLine>
+                  <ReferenceLine y={proteinGoal} stroke="#1A3C2E" strokeDasharray="6 4" strokeWidth={1} label={{ value: "Goal", position: "insideTopRight", fontSize: 9, fill: "#1A3C2E" } as any} />
                   <Bar dataKey="protein" fill="hsl(147, 35%, 49%)" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
